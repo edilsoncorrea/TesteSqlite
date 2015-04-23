@@ -1,5 +1,6 @@
 package br.com.edilsoncorrea.testesqlite.modelo;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 
 import java.text.SimpleDateFormat;

@@ -53,16 +53,26 @@ public class WaypointDAO {
         // return the orders with the sum of their amounts per account
         GenericRawResults<Object[]> rawResults =
                 waypointDao.queryRaw("select data, sum(distancia) as disttotal from Waypoint group by data",
-                        new DataType[]{DataType.DATE, DataType.INTEGER});
+                        new DataType[]{DataType.DATE_LONG, DataType.INTEGER});
         // page through the results
-        for (Object[] resultArray : rawResults) {
+
+        try {
+            Object[] resultado = rawResults.getFirstResult();
+            item = new Waypoint();
+            item.data = (Date)resultado[0];
+            lista.add(item);
+        } catch (Exception E){
+            E.printStackTrace();
+        }
+
+        /*for (Object[] resultArray : rawResults) {
             item = new Waypoint();
 
             item.data = (Date)resultArray[0];
             item.distancia = (Integer) resultArray[1];
 
            lista.add(item);
-        }
+        }*/
 
         try {
             rawResults.close();
