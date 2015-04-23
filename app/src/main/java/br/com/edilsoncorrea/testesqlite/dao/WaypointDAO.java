@@ -56,6 +56,7 @@ public class WaypointDAO {
                         new DataType[]{DataType.DATE_LONG, DataType.INTEGER});
         // page through the results
 
+/*
         try {
             Object[] resultado = rawResults.getFirstResult();
             item = new Waypoint();
@@ -64,15 +65,16 @@ public class WaypointDAO {
         } catch (Exception E){
             E.printStackTrace();
         }
+*/
 
-        /*for (Object[] resultArray : rawResults) {
+        for (Object[] resultArray : rawResults) {
             item = new Waypoint();
 
             item.data = (Date)resultArray[0];
             item.distancia = (Integer) resultArray[1];
 
            lista.add(item);
-        }*/
+        }
 
         try {
             rawResults.close();

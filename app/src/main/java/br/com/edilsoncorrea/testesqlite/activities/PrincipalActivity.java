@@ -50,7 +50,6 @@ public class PrincipalActivity extends ActionBarActivity {
         lista = dao.getListaAgrupada();
 
         for (Waypoint item : lista) {
-
             Log.i("Teste", "Distancia: "+ item.distancia);
 
         }
@@ -67,6 +66,7 @@ public class PrincipalActivity extends ActionBarActivity {
 
         SimpleDateFormat ftData = new SimpleDateFormat("dd/MM/yyyy");
         String dataStr = ftData.format(data);
+        //String dataStr = "24/04/2015";
 
         SimpleDateFormat ftHora = new SimpleDateFormat("HH:mm:ss");
         String horaStr = ftHora.format(data);
